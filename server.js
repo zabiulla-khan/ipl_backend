@@ -11,6 +11,13 @@ app.use(teamRouter);
 app.use(playerRouter);
 app.use(adminRouter);
 
+app.get("/", (req, res) => {
+  res.json({
+    message: "ok",
+    response: "success",
+  });
+});
+
 app.listen(3000, async () => {
   console.log("server listening on port 3000");
   await dbConnection();
